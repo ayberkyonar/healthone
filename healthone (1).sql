@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 okt 2021 om 14:44
+-- Gegenereerd op: 14 okt 2021 om 11:56
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -38,10 +38,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
-(1, 'crosstrainer', 'crosstrainer.jpg'),
-(2, 'hometrainer', 'hometrainer.jpg'),
-(3, 'loopband', 'loopband.jpg'),
-(4, 'roeitrainer', 'roeitrainer.jpg');
+(1, 'crosstrainer', 'categories/crosstrainer.jpg'),
+(2, 'hometrainer', 'categories/hometrainer.jpg'),
+(3, 'loopband', 'categories/loopband.jpg'),
+(4, 'roeitrainer', 'categories/roeitrainer.jpg');
 
 -- --------------------------------------------------------
 
@@ -62,12 +62,12 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VALUES
-(1, 'cr1', 'cr1.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(2, 'cr2', 'cr2.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(3, 'cr3', 'cr3.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(4, 'cr4', 'cr4.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(5, 'cr5', 'cr5.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(6, 'cr6', 'cr6.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1);
+(1, 'cr1', 'categories/crosstrainer/cr1.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
+(2, 'cr2', 'categories/crosstrainer/cr2.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
+(3, 'cr3', 'categories/crosstrainer/cr3.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
+(4, 'cr4', 'categories/crosstrainer/cr4.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
+(5, 'cr5', 'categories/crosstrainer/cr5.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
+(6, 'cr6', 'categories/crosstrainer/cr6.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1);
 
 --
 -- Indexen voor geëxporteerde tabellen
