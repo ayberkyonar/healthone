@@ -16,5 +16,4 @@ function getCategoryName(int $id)
     $category=$sth->fetch(PDO::FETCH_ASSOC);
     return $category['name'];
 
-
 }

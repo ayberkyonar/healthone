@@ -3,19 +3,18 @@
 function getProducts(int $categoryId)
 {
     global $pdo;
-    $sth = $pdo->prepare('Select * FROM product WHERE category_id=?');
-    $sth-> bindParam(1,$categoryId,PDO::PARAM_INT);
+    $sth = $pdo->prepare('SELECT * FROM product WHERE category_id=? ');
+    $sth->bindParam(1, $categoryId);
     $sth->execute();
-    $products=$sth->fetchAll(PDO::FETCH_CLASS,'Product');
-    return $products;
+    return $sth->fetchAll(PDO::FETCH_CLASS, 'Product');
 }
 
 function getProduct(int $productId)
 {
     global $pdo;
-    $sth = $pdo->prepare('Select * FROM product WHERE id =?');
-    $sth-> bindParam(1,$productId, PDO::PARAM_INT);
-    $sth->setFetchMode(PDO::FETCH_CLASS,'Product');
+    $sth = $pdo->prepare('SELECT * FROM product WHERE id=?');
+    $sth->bindParam(1, $productId);
     $sth->execute();
-    return $sth->fetch();// can be a boolean false!!!!
+    return $sth->fetchAll(PDO::FETCH_CLASS, 'Product')[0];
 }
+

@@ -11,16 +11,16 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/home">home</a>
+                    <a class="nav-link active" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">sportapparaat</a>
+                    <a class="nav-link" href="/categories">Sportapparaat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="/register">registreren</a>
+                    <a class="nav-link" href="contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">contact</a>
+                    <a class="nav-link"  href="/register">Registreren</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

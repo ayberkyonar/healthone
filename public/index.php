@@ -37,6 +37,9 @@ switch ($params[1]) {
             include_once "../Templates/categories.php";
         }
         break;
+    case 'contact':
+        include_once "../Templates/contact.php";
+        break;
     case 'register':
         include_once "../Templates/register.php";
         break;

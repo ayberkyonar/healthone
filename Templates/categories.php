@@ -15,7 +15,7 @@ include_once('defaults/head.php');
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home">sportcenter</a></li>
+            <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
         </ol>
     </nav>
