@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 16 okt 2021 om 21:46
+-- Gegenereerd op: 18 okt 2021 om 19:35
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -38,10 +38,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
-(1, 'crosstrainer', 'categories/crosstrainer.jpg'),
-(2, 'hometrainer', 'categories/hometrainer.jpg'),
-(3, 'loopband', 'categories/loopband.jpg'),
-(4, 'roeitrainer', 'categories/roeitrainer.jpg');
+(1, 'Crosstrainer', 'categories/crosstrainer.jpg'),
+(2, 'Hometrainer', 'categories/hometrainer.jpg'),
+(3, 'Loopband', 'categories/loopband.jpg'),
+(4, 'Roeitrainer', 'categories/roeitrainer.jpg');
 
 -- --------------------------------------------------------
 
@@ -60,13 +60,13 @@ CREATE TABLE `opening_hours` (
 --
 
 INSERT INTO `opening_hours` (`id`, `day`, `time`) VALUES
-(5, 'Maandag', '07:00-20:00'),
-(6, 'Dinsdag', '08:00-20:00'),
-(7, 'Woensdag', '07:00-20:00'),
-(8, 'Donderdag', '08:00-20:00'),
-(9, 'Vrijdag', '07:00-20:30'),
-(10, 'Zaterdag', '08:00-13:00'),
-(11, 'Zondag', '08:00-13:00');
+(5, 'Maandag', '07:00 - 20:00'),
+(6, 'Dinsdag', '08:00 - 20:00'),
+(7, 'Woensdag', '07:00 - 20:00'),
+(8, 'Donderdag', '08:00 - 20:00'),
+(9, 'Vrijdag', '07:00 - 20:30'),
+(10, 'Zaterdag', '08:00 - 13:00'),
+(11, 'Zondag', '08:00 - 13:00');
 
 -- --------------------------------------------------------
 
@@ -87,12 +87,12 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VALUES
-(1, 'cr1', 'categories/crosstrainer/cr1.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(2, 'cr2', 'categories/crosstrainer/cr2.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(3, 'cr3', 'categories/crosstrainer/cr3.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(4, 'cr4', 'categories/crosstrainer/cr4.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(5, 'cr5', 'categories/crosstrainer/cr5.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1),
-(6, 'cr6', 'categories/crosstrainer/cr6.jpg', 'qwertyuiopasdfghjklzxcvbnm', 1);
+(1, 'Crosstrainer 1', 'categories/crosstrainer/cr1.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(2, 'Crosstrainer 2', 'categories/crosstrainer/cr2.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(3, 'Crosstrainer 3', 'categories/crosstrainer/cr3.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(4, 'Crosstrainer 4', 'categories/crosstrainer/cr4.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(5, 'Crosstrainer 5', 'categories/crosstrainer/cr5.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(6, 'Crosstrainer 6', 'categories/crosstrainer/cr6.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1);
 
 -- --------------------------------------------------------
 

@@ -27,16 +27,17 @@ include_once('defaults/head.php');
 </div>
 
 <div class="row">
-    <div class="col-12">
-        <div class="card">
-            <img class="img-fluid center-block" width="200px" src='/img/<?= $product->picture ?>'/>
+    <div class="col-md-12">
+        <div class="card-body text-center">
+            <h5 class="card-title"><?= $product->name ?></h5>
+            <img class="img-fluid center-block" width="300px" src='/img/<?= $product->picture ?>'/>
             <div class="card-body">
-                <h5 class="card-title"><?= $product->name ?></h5>
-                <p class="card-text"><?= $product->description ?></p>
+                <h5 class="card-text"><?= $product->description ?></h5>
             </div>
         </div>
     </div>
 </div>
+
 
 <hr>
 <?php
