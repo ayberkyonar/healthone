@@ -1,5 +1,13 @@
 body {
-    background-color: gainsboro
+    background-color: rgb(147, 133, 120)
+}
+
+* {
+    font-family: Ebrima;
+}
+
+#one{
+    color: rgb(133, 114, 104)
 }
 
 .container {
@@ -7,20 +15,16 @@ body {
 }
 
 .pull-right img-thumbnail {
-    margin-top: -10px;
-    margin-bottom: 10px
-}
-
-.header-row {
-    margin-top: 20px
-}
-
-.banner-img {
+    margin-top: -20px;
     margin-bottom: 20px
 }
 
-.navbar {
-    margin-bottom: 0;
+.header-row {
+    margin-top: 50px
+}
+
+.banner-img {
+    margin-bottom: 10px
 }
 
 .product-img {

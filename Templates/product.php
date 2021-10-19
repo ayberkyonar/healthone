@@ -18,9 +18,8 @@ include_once('defaults/head.php');
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/categories/<?= $product->category_id ?>"<?= $name ?></a></li>
-            <li class="breadcrumb-item active" aria-current="page"><?= $product->name?></li>
-
+            <li class="breadcrumb-item"><a href="/product">Products</a></li>
+            <li class="breadcrumb-item"><a href="/product">Product</a></li>
         </ol>
     </nav>
 
