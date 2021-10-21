@@ -17,7 +17,7 @@
                     <a class="nav-link" href="/categories">Sportapparaat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"  href="/register">Registreren</a>

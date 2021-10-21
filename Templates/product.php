@@ -25,18 +25,20 @@ include_once('defaults/head.php');
 
 </div>
 
-<div class="row">
-    <div class="col-md-12">
+<div class="container">
+    <div class="col-md-6">
         <div class="card-body text-center">
             <h5 class="card-title"><?= $product->name ?></h5>
             <img class="img-fluid center-block" width="300px" src='/img/<?= $product->picture ?>'/>
-            <div class="card-body">
-                <h5 class="card-text"><?= $product->description ?></h5>
-            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card-body text-center">
+            <h4 class="card-text" style="justify-content: center"><?= $product->description ?></h4>
         </div>
     </div>
 </div>
-
 
 <hr>
 <?php
