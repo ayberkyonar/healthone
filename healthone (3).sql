@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 okt 2021 om 19:35
+-- Gegenereerd op: 24 okt 2021 om 21:27
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -60,13 +60,13 @@ CREATE TABLE `opening_hours` (
 --
 
 INSERT INTO `opening_hours` (`id`, `day`, `time`) VALUES
-(5, 'Maandag', '07:00 - 20:00'),
-(6, 'Dinsdag', '08:00 - 20:00'),
-(7, 'Woensdag', '07:00 - 20:00'),
-(8, 'Donderdag', '08:00 - 20:00'),
-(9, 'Vrijdag', '07:00 - 20:30'),
-(10, 'Zaterdag', '08:00 - 13:00'),
-(11, 'Zondag', '08:00 - 13:00');
+(1, 'Maandag', '07:00 - 20:00'),
+(2, 'Dinsdag', '08:00 - 20:00'),
+(3, 'Woensdag', '07:00 - 20:00'),
+(4, 'Donderdag', '08:00 - 20:00'),
+(5, 'Vrijdag', '07:00 - 20:30'),
+(6, 'Zaterdag', '08:00 - 13:00'),
+(7, 'Zondag', '08:00 - 13:00');
 
 -- --------------------------------------------------------
 
@@ -122,9 +122,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
 -- Indexen voor tabel `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `name` (`name`),
-  ADD KEY `id` (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `opening_hours`
