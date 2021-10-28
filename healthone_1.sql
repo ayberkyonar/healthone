@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 24 okt 2021 om 21:27
+-- Gegenereerd op: 28 okt 2021 om 11:29
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -60,13 +60,13 @@ CREATE TABLE `opening_hours` (
 --
 
 INSERT INTO `opening_hours` (`id`, `day`, `time`) VALUES
-(1, 'Maandag', '07:00 - 20:00'),
-(2, 'Dinsdag', '08:00 - 20:00'),
-(3, 'Woensdag', '07:00 - 20:00'),
-(4, 'Donderdag', '08:00 - 20:00'),
-(5, 'Vrijdag', '07:00 - 20:30'),
-(6, 'Zaterdag', '08:00 - 13:00'),
-(7, 'Zondag', '08:00 - 13:00');
+(5, 'Maandag', '07:00 - 20:00'),
+(6, 'Dinsdag', '08:00 - 20:00'),
+(7, 'Woensdag', '07:00 - 20:00'),
+(8, 'Donderdag', '08:00 - 20:00'),
+(9, 'Vrijdag', '07:00 - 20:30'),
+(10, 'Zaterdag', '08:00 - 17:00'),
+(11, 'Zondag', '08:00 - 13:00');
 
 -- --------------------------------------------------------
 
@@ -97,22 +97,32 @@ INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VA
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `review`
+--
+
+CREATE TABLE `review` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `description` text NOT NULL,
+  `stars` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `Role` enum('member','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Gegevens worden geëxporteerd voor tabel `user`
---
-
-INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
-(1, NULL, NULL, NULL);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -122,7 +132,9 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
 -- Indexen voor tabel `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexen voor tabel `opening_hours`
@@ -136,6 +148,15 @@ ALTER TABLE `opening_hours`
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
+
+--
+-- Indexen voor tabel `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `stars` (`stars`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexen voor tabel `user`
@@ -166,10 +187,33 @@ ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT voor een tabel `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Beperkingen voor geëxporteerde tabellen
+--
+
+--
+-- Beperkingen voor tabel `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
+
+--
+-- Beperkingen voor tabel `review`
+--
+ALTER TABLE `review`
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
