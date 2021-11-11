@@ -26,16 +26,12 @@ include_once('defaults/head.php');
 </div>
 
 <div class="container">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="card-body text-center">
             <h5 class="card-title"><?= $product->name ?></h5>
             <img class="img-fluid center-block" width="300px" src='/img/<?= $product->picture ?>'/>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="card-body text-center">
-            <h4 class="card-text" style="justify-content: center"><?= $product->description ?></h4>
+            <p class="card-text" style="justify-content: center"><?= $product->description ?></p>
+            <a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-secondary">Add Review</a>
         </div>
     </div>
 </div>

@@ -30,13 +30,15 @@ include_once('defaults/head.php');
         <div class="col-sm-6 col-md-2">
             <div class="card">
                 <div class="card-body text-center">
-                    <a href="/categories/<?= $product->category_id ?>/product/<?= $product->id ?>">
+                    <a href="/product/<?= $product->id ?>">
                         <img class="product-img img-responsive center-block" src='/img/<?= $product->picture ?>'/>
+
                     </a>
                     <div class="card-title mb-3"><?= $product->name ?>
                     </div>
                 </div>
             </div>
+
         </div>
     <?php endforeach;?>
     <hr>

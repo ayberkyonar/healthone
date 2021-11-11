@@ -23,21 +23,21 @@ include_once('defaults/head.php');
 </div>
 <div class="row gy-3 ">
 
-    <?php global $categories ?>
-    <?php foreach ($categories as $category):?>
-        <div class="col-sm-4 col-md-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <a href="/categories/<?= $category->id ?>">
-                        <img class="product-img img-responsive center-block" src='/img/<?= $category->picture ?>'/>
+<?php global $categories ?>
+<?php foreach ($categories as $category):?>
+    <div class="col-sm-4 col-md-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <a href="/category/<?= $category->id ?>">
+                    <img class="product-img img-responsive center-block" src='/img/<?= $category->picture ?>'/>
 
-                    </a>
-                    <div class="card-title mb-3"><?= $category->name ?>
-                    </div>
+                </a>
+                <div class="card-title mb-3"><?= $category->name ?>
                 </div>
             </div>
-
         </div>
+
+    </div>
     <?php endforeach;?>
     <hr>
     <?php
