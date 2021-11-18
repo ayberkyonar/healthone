@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 28 okt 2021 om 11:29
+-- Gegenereerd op: 18 nov 2021 om 12:37
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -103,7 +103,8 @@ INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VA
 CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `description` text NOT NULL,
   `stars` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
