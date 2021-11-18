@@ -46,11 +46,20 @@ switch ($params[1]) {
     case 'contact':
         include_once "../Templates/contact.php";
         break;
-    case 'review':
-        $id=$_GET['id'];
-        $product=getProduct($id);
-        include_once "../Templates/review.php";
-        break;
+        case 'review':
+            if(isset($_GET['id'])) {
+                $productId=$_GET['id'];
+                $product = getProduct($productId);
+                if(isset($_POST['verzenden'])) {
+                    //saveReview();
+                    include_once "../Templates/product.php";
+                } else {
+                    include_once "../Templates/REview.php";
+                }
+            } else {
+                include_once "../Templates/home.php";
+            }
+            break;
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";

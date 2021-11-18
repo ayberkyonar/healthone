@@ -1,3 +1,12 @@
+<?php 
+    require '../Modules/Database.php';
+    require '../Modules/Reviews.php';
+
+    if(isset($_POST['send'])) {
+        saveReview($_POST['name'],$_POST['description']);
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <?php
@@ -36,40 +45,45 @@ include_once('defaults/head.php');
     </div>
 
 
-<div class="row gy-3">
-        <p class="lead">Geef uw mening over dit sportapparaat</p>
+    <div class="container">
+    <div class="row gy-3">
         <form method="post">
             <div class="mb-3">
-                <label for="name" class="col-form-label">
+                <label for="naam" class="col-form-label">
                     Naam:
                 </label>
-                <input type="text" name="name" class="form-control" id="name">
+                <input type="text" name="naam" class="form-control" id="naam">
             </div>
             <div class="mb-3">
-                <label for="name" class="col-form-label">
-                    Review:
+                <label for="bericht" class="col-form-label">
+                    Bericht:
                 </label>
-                <input type="text" name="name" class="form-control" id="name">
+                <input type="text" name="bericht" class="form-control" id="bericht">
             </div>
-            <div class="mb-3">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Waardering:</label>
-                <select class="custom-seleect mr-sm-2" name="stars" id="inlineFormCustomSelect">
-                    <option selected value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
+           
             <div class="modal-footer">
-                <button type="submit" name="close" class="btn btn-secondary">Close</button>
-                <button type="submit" class="btn btn-secondary">Save Change</button>
+                <button type="submit" name="verzenden" class="btn btn-secondary">Save Change</button>
             </div>
         </form>
     </div>
-</div>
-</div>
 
+<?php
+    try {
+        $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
+        $query = $db->prepare ("SELECT * FROM review");
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($result as &$data) {
+            echo $data ["name"] . " <br>  ";
+            echo $data ["description"] . " <br> ";
+            echo $data ["date"] . " <br> <br> ";
+        }
+        echo "</table>";
+    } catch(PDOException $e) {
+        die("Error!: " . $e->getMessage());
+    }
+    ?>
+    </div>
 
 </body>
 </html>
