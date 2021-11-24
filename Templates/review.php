@@ -1,12 +1,3 @@
-<?php 
-    require '../Modules/Database.php';
-    require '../Modules/Reviews.php';
-
-    if(isset($_POST['send'])) {
-        saveReview($_POST['name'],$_POST['description']);
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <?php
@@ -52,15 +43,24 @@ include_once('defaults/head.php');
                 <label for="naam" class="col-form-label">
                     Naam:
                 </label>
-                <input type="text" name="naam" class="form-control" id="naam">
+                <input type="text" name="name" class="form-control" id="name">
             </div>
             <div class="mb-3">
                 <label for="bericht" class="col-form-label">
                     Bericht:
                 </label>
-                <input type="text" name="bericht" class="form-control" id="bericht">
+                <input type="text" name="description" class="form-control" id="description">
             </div>
-           
+            <div class="mb-3">
+                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Waardering:</label>
+                <select class="custom-select mr-sm-2" name="stars" id="inlineFormCustomSelect">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
             <div class="modal-footer">
                 <button type="submit" name="verzenden" class="btn btn-secondary">Save Change</button>
             </div>
@@ -70,10 +70,10 @@ include_once('defaults/head.php');
 <?php
     try {
         $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
-        $query = $db->prepare ("SELECT * FROM review");
+        $query = $db->prepare('SELECT * FROM review where product_id =' . $product->id);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($result as &$data) {
+        foreach ($result as $data) {
             echo $data ["name"] . " <br>  ";
             echo $data ["description"] . " <br> ";
             echo $data ["date"] . " <br> <br> ";

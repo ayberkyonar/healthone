@@ -14,5 +14,3 @@ class Review
         settype($this-> id, 'integer');
     }
 }
-
-?>

@@ -2,6 +2,7 @@
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
+require '../Modules/Reviews.php';
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -46,20 +47,24 @@ switch ($params[1]) {
     case 'contact':
         include_once "../Templates/contact.php";
         break;
-        case 'review':
-            if(isset($_GET['id'])) {
-                $productId=$_GET['id'];
-                $product = getProduct($productId);
-                if(isset($_POST['verzenden'])) {
-                    //saveReview();
-                    include_once "../Templates/product.php";
-                } else {
-                    include_once "../Templates/REview.php";
-                }
+    case 'review':
+        if(isset($_GET['id'])) {
+            $productId=$_GET['id'];
+            $product = getProduct($productId);
+            if(isset($_POST['verzenden'])) {
+                //var_dump($_POST);
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $saveReview = saveReview($name,$description,$productId);
+                $reviews=getReviews();
+                include_once "../Templates/product.php";
             } else {
-                include_once "../Templates/home.php";
+                include_once "../Templates/review.php";
             }
-            break;
+        } else {
+            include_once "../Templates/home.php";
+        }
+        break;
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";

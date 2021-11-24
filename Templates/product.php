@@ -11,7 +11,7 @@ include_once('defaults/head.php');
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
     include_once('defaults/pictures.php');
-    global $product;
+    global $product, $name, $reviews;
     ?>
 
     <nav aria-label="breadcrumb">
@@ -35,6 +35,27 @@ include_once('defaults/head.php');
         </div>
     </div>
 </div>
+
+<?php foreach ($reviews as $review):?>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body text-center">
+
+                <div class="card-title mb-3"><?= $review->name ?>
+
+                </div>
+                <div>
+                    <?= $review->description?>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+<?php endforeach;?>
+<hr>
+
 
 <hr>
 <?php
