@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 nov 2021 om 12:37
+-- Gegenereerd op: 25 nov 2021 om 12:32
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -126,6 +126,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Gegevens worden geëxporteerd voor tabel `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `Role`) VALUES
+(1, 'test@hotmail.com', 'test', 'test', 'test', 'member');
+
+--
 -- Indexen voor geëxporteerde tabellen
 --
 
@@ -191,13 +198,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT voor een tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

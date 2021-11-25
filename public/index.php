@@ -55,7 +55,8 @@ switch ($params[1]) {
                 //var_dump($_POST);
                 $name = $_POST['name'];
                 $description = $_POST['description'];
-                $saveReview = saveReview($name,$description,$productId);
+                $stars = $_POST['stars'];
+                saveReview($name,$description,$stars,$productId);
                 $reviews=getReviews();
                 include_once "../Templates/product.php";
             } else {

@@ -18,8 +18,9 @@ include_once('defaults/head.php');
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/product">Products</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li>
             <li class="breadcrumb-item"><a href="/product">Product</a></li>
+            <li class="breadcrumb-item"><a href="/review">Review</a></li>
         </ol>
     </nav>
 
@@ -53,8 +54,8 @@ include_once('defaults/head.php');
             </div>
             <div class="mb-3">
                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Waardering:</label>
-                <select class="custom-select mr-sm-2" name="stars" id="inlineFormCustomSelect">
-                    <option value="1">1</option>
+                <select name="stars"">
+                    <option value="1"> 1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -67,22 +68,6 @@ include_once('defaults/head.php');
         </form>
     </div>
 
-<?php
-    try {
-        $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
-        $query = $db->prepare('SELECT * FROM review where product_id =' . $product->id);
-        $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($result as $data) {
-            echo $data ["name"] . " <br>  ";
-            echo $data ["description"] . " <br> ";
-            echo $data ["date"] . " <br> <br> ";
-        }
-        echo "</table>";
-    } catch(PDOException $e) {
-        die("Error!: " . $e->getMessage());
-    }
-    ?>
     </div>
 
 </body>
