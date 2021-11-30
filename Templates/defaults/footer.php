@@ -1,3 +1,3 @@
 <footer >
-    <p class="clearfix pb-3  text-black text-center">&copy;Afdeling software development Tinwerf 10, 2544 ED Den Haag.</p>
+    <p class="clearfix pb-3  text-black text-center">&copy;Ayberk Yonar, HealthOne</p>
 </footer>

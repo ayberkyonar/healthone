@@ -34,7 +34,7 @@ include_once('defaults/head.php');
                         $query->execute();
                         $result = $query->fetchAll(PDO::FETCH_ASSOC);
                         echo "<table>";
-                        foreach ($result as &$data) {
+                        foreach ($result as $data) {
                             echo "<td>" . $data ["day"] . " ";
                             echo "<td>" . $data ["time"] . "<br>";
                             echo "</tr>";
