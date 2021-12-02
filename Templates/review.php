@@ -24,8 +24,6 @@ include_once('defaults/head.php');
         </ol>
     </nav>
 
-</div>
-
 <div class="container">
     <div class="col-md-12">
         <div class="card-body text-center">
@@ -36,8 +34,6 @@ include_once('defaults/head.php');
         </div>
     </div>
 
-
-    <div class="container">
     <div class="row gy-3">
         <form method="post">
             <div class="mb-3">
@@ -70,8 +66,6 @@ include_once('defaults/head.php');
 
     </div>
 
-</body>
-</html>
 <hr>
 <?php
 include_once('defaults/footer.php');

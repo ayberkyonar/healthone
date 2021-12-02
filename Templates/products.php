@@ -22,7 +22,6 @@ include_once('defaults/head.php');
         </ol>
     </nav>
 
-</div>
 <div class="row gy-3 ">
 
     <?php global $products, $name ?>
@@ -41,11 +40,14 @@ include_once('defaults/head.php');
 
         </div>
     <?php endforeach;?>
+    </div>
     <hr>
+
     <?php
     include_once('defaults/footer.php');
 
     ?>
+
 
 </body>
 </html>
