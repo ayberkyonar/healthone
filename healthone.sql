@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 30 nov 2021 om 19:14
+-- Gegenereerd op: 02 dec 2021 om 12:55
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -134,7 +134,11 @@ CREATE TABLE `review` (
 
 INSERT INTO `review` (`id`, `user_id`, `name`, `date`, `description`, `stars`, `product_id`) VALUES
 (28, 1, 'Ayberk Yonar', '2021-11-25 18:51:07', 'nubbujbnuboub', 3, 1),
-(29, 1, 'eee', '2021-11-30 16:20:13', 'eeee', 4, 14);
+(29, 1, 'eee', '2021-11-30 16:20:13', 'eeee', 4, 14),
+(30, 1, 'ee', '2021-12-02 08:59:06', 'eeeeeeeeeee', 3, 1),
+(31, 1, 'TEsten', '2021-12-02 09:27:18', 'tst', 4, 3),
+(32, 1, 'eee', '2021-12-02 11:37:28', 'eee', 1, 1),
+(33, 1, 'eee', '2021-12-02 11:37:38', 'eee', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -148,15 +152,15 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
-  `Role` enum('member','admin') NOT NULL
+  `role` enum('member','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `Role`) VALUES
-(1, 'test@hotmail.com', 'test', 'test', 'test', 'member');
+INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `role`) VALUES
+(1, 'test@hotmail.com', 'test', 'test', 'test', 'admin');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -224,7 +228,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT voor een tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
