@@ -12,6 +12,8 @@ if (!isAdmin()) {
             break;
 
         case 'products':
+            include_once "../Templates/admin/products.php";
+            break;
 
         case 'addProduct':
 

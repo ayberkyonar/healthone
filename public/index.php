@@ -4,6 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
 require '../Modules/Login.php';
+require '../Modules/Contact.php';
 //require '../Modules/Logout.php';
 //require '../Modules/Common.php';
 session_start();
@@ -40,7 +41,7 @@ switch ($params[1]) {
             $product = getProduct($productId);
             $name = getCategoryName($product->category_id);
             $titleSuffix = '|' . $product->name;
-            //$reviews = getReviews($productId);
+            $reviews = getReviews($productId);
             include_once "../Templates/product.php";
         }
         else {
@@ -50,6 +51,7 @@ switch ($params[1]) {
         break;
 
     case 'contact':
+        $contact = getContact();
         include_once "../Templates/contact.php";
         break;
 
@@ -63,7 +65,7 @@ switch ($params[1]) {
                 $description = $_POST['description'];
                 $stars = $_POST['stars'];
                 saveReview($name,$description,$stars,$productId);
-                $reviews=getReviews();
+                $reviews=getReviews($productId);
                 include_once "../Templates/product.php";
             } else {
                 include_once "../Templates/review.php";
@@ -104,6 +106,11 @@ switch ($params[1]) {
 
     case 'admin':
         include_once ('admin.php');
+        break;
+
+    case 'logout':
+        $_SESSION=[];
+        include_once "../Templates/home.php";
         break;
 
     default:

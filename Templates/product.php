@@ -38,24 +38,15 @@ include_once('defaults/head.php');
     <hr>
 
 <?php
-try {
-    $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
-    $query = $db->prepare('SELECT * FROM review where product_id =' . $product->id);
-    $query->execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($result as $data) {
-        echo "Naam: " . $data ["name"] . " <br>  ";
-        echo "Bericht: " . $data ["description"] . " <br> ";
-        echo "Waardering: " . $data ["stars"] . " <br> ";
-        echo $data ["date"] . " <br> <br> ";
+    foreach ($reviews as $review) {
+        echo "Naam: " . $review->name . " <br>  ";
+        echo "Bericht: " . $review->description . " <br> ";
+        echo "Waardering: " . $review->stars . " <br> ";
+        echo $review->date  . " <br> <br> ";
     }
     echo "</table>";
-} catch(PDOException $e) {
-    die("Error!: " . $e->getMessage());
-}
-?>
 
-<hr>
+?>
 <?php
 include_once('defaults/footer.php');
 
