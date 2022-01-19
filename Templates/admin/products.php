@@ -3,6 +3,9 @@
 
 <?php
 include_once('defaults/head.php');
+global $pdo;
+global $products;
+global $product;
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -11,10 +14,6 @@ include_once('defaults/head.php');
 
     body {
         background-color: rgb(84, 88, 91)
-    }
-
-    .header-row {
-        margin-top: 50px
     }
 
 </style>
@@ -30,7 +29,7 @@ include_once('defaults/head.php');
     <div class="container">
         <div class="d-flex bd-highlight mb-3">
             <div class="p-2 bd-highlight">
-                <button type="button" class="btn btn-success" onclick="showUserCreateBox()">Add</button>
+                <td scrope="col"><a class="btn btn-success btn-sm px-4" href="/admin/addProduct/<?=$product->id?>">Add</a></td>
             </div>
         </div>
 
@@ -47,14 +46,22 @@ include_once('defaults/head.php');
                 </tr>
                 </thead>
                 <tbody id="mytable">
-                <tr>
-                    <th scope="col"> 1</th>
-                    <th scope="col">Pic</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Crosstrainer</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                </tr>
+                <?php
+                $number = 1;
+                foreach ($products as $product) {
+                    ?>
+                    <tr>
+                        <td><?=$number?></td>
+                        <td scrope="col"><img class="img-fluid center-block" width="100px" src='/img/<?= $product->picture ?>'/></td>
+                        <td scrope="col"><?=$product->name?></td>
+                        <td scrope="col"><?=getCategoryName($product->category_id)?></td>
+                        <td scrope="col"><a class="btn btn-primary btn-sm px-4" href="/admin/edit/<?=$product->id?>">Edit</a></td>
+                        <td scrope="col"><a class="btn btn-danger btn-sm px-4" href="/admin/deleteProduct/<?=$product->id?>">Delete</a></td>
+                    </tr>
+                    <?php
+                    $number++;
+                }
+                ?>
                 </tbody>
             </table>
         </div>
