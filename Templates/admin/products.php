@@ -8,15 +8,18 @@ global $products;
 global $product;
 ?>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-<style>
+    <style>
 
-    body {
-        background-color: rgb(84, 88, 91)
-    }
+        body {
+            background-color: rgb(84, 88, 91)
+        }
 
-</style>
+    </style>
+
+</head>
 
 <body>
 <div class="container">
@@ -29,7 +32,7 @@ global $product;
     <div class="container">
         <div class="d-flex bd-highlight mb-3">
             <div class="p-2 bd-highlight">
-                <td scrope="col"><a class="btn btn-success btn-sm px-4" href="/admin/addProduct/<?=$product->id?>">Add</a></td>
+                <a type="button" href="addProduct" role="button" class="btn btn-success">Add</a>
             </div>
         </div>
 
@@ -55,7 +58,7 @@ global $product;
                         <td scrope="col"><img class="img-fluid center-block" width="100px" src='/img/<?= $product->picture ?>'/></td>
                         <td scrope="col"><?=$product->name?></td>
                         <td scrope="col"><?=getCategoryName($product->category_id)?></td>
-                        <td scrope="col"><a class="btn btn-primary btn-sm px-4" href="/admin/edit/<?=$product->id?>">Edit</a></td>
+                        <td scrope="col"><a class="btn btn-primary btn-sm px-4" href="/admin/editProduct/<?=$product->id?>">Edit</a></td>
                         <td scrope="col"><a class="btn btn-danger btn-sm px-4" href="/admin/deleteProduct/<?=$product->id?>">Delete</a></td>
                     </tr>
                     <?php
