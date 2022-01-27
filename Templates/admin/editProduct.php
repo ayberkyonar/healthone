@@ -32,56 +32,57 @@ include_once('defaults/head.php');
                     <label for="category_id" class="col-form-label">
                         Categorie:
                     </label>
+
                 <?php
                 try {
                 $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
                 $query = $db->prepare ("SELECT * FROM category");
                 $query->execute();
                 $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
                 ?>
 
                     <select list="category_id" name="category_id">
                 </div>
-                        <?php
-
-                        foreach ($result as $data) {
-                            echo "<option name='category_id' value=' ". $data['id'] . " '>" . $data['name'] . "</option>";
-                        }
-                        ?>
-                    </select>
-
                 <?php
-                if(isset($_POST['verzenden'])){
-                    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-                    $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-                    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_STRING);
 
-                    $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
-                    $query = $db->prepare ("INSERT INTO product(name, description, category_id) values (:name,:description,:category_id)");
-                    $query->bindParam("name", $name);
-                    $query->bindParam("description", $description);
-                    $query->bindParam("category_id", $category_id);
-                    if ($query->execute()) {
-                        echo "Toegevoegd";
-                    }
-                    else {
-                        echo "Mislukt";
-                    }
-                }
-
-                } catch(PDOException $e) {
-                    echo "Connection failed: " . $e->getMessage();
+                foreach ($result as $data) {
+                    echo "<option name='category_id' value=' ". $data['id'] . " '>" . $data['name'] . "</option>";
                 }
                 ?>
+                </select>
 
-                <div class="modal-footer">
-                    <button type="submit" name="verzenden" class="btn btn-secondary">Add</button>
-                </div>
+        <?php
+            if(isset($_POST['verzenden'])){
+                $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+                $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+                $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_STRING);
+                $product_id = filter_input(INPUT_POST, 'product_id', FILTER_SANITIZE_STRING);
 
-            </form>
-        </div>
+                $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
+                $query = $db->prepare ("UPDATE product SET name = :name, description= :description, category_id= :category_id WHERE id= " . $product_id  . " ");
+                $query->bindParam("name", $name);
+                $query->bindParam("description", $description);
+                $query->bindParam("category_id", $category_id);
+                if ($query->execute()) {
+                    echo "Toegevoegd";
+                }
+                else {
+                    echo "Mislukt";
+                }
+            }
+
+            } catch(PDOException $e) {
+                echo "Connection failed: " . $e->getMessage();
+            }
+            ?>
+
+            <div class="modal-footer">
+                <button type="submit" name="verzenden" class="btn btn-secondary">Add</button>
+            </div>
+
+        </form>
     </div>
+</div>
 
     <hr>
     <?php
