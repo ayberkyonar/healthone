@@ -30,8 +30,19 @@ function deleteProduct(int $productID)
     global $pdo;
     $id = filter_var($productID, FILTER_VALIDATE_INT);
     if ($id !== false) {
-        $sth = $pdo->prepare('DELETE FROM product WHERE id=:id');
-        $sth->bindParam(':id', $id);
-        $sth->execute();
+        $stmnt = $pdo->prepare('DELETE FROM product WHERE id=:id');
+        $stmnt->bindParam(':id', $id);
+        $stmnt->execute();
+    }
+}
+
+function addProduct(int $productID)
+{
+    global $pdo;
+    $id = filter_var($productID, FILTER_VALIDATE_INT);
+    if ($id !== false) {
+        $stmnt = $pdo->prepare("INSERT INTO product (name, picture,description,category_id) VALUES (:name,:picture,:description,:category_id)");
+        $stmnt->bindParam(':id', $id);
+        $stmnt->execute();
     }
 }

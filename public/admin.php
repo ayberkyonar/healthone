@@ -17,7 +17,8 @@ if (!isAdmin()) {
             break;
 
         case 'addProduct':
-            include_once "../Templates/admin/addProduct.php";
+            addProduct($_GET['id']);
+            header("location:/admin/addProduct");
             break;
 
         case 'deleteProduct':
@@ -26,11 +27,6 @@ if (!isAdmin()) {
             deleteProduct($_GET['id']);
             header("location:/admin/products");
             break;
-
-        case 'editProduct':
-            include_once "../Templates/admin/editProduct.php";
-            break;
-
 
         default:
             include_once "../Templates/admin/home.php";

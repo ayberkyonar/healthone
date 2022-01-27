@@ -6,8 +6,6 @@ RewriteRule ^category/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]
 RewriteRule ^product/([0-9]+)/?$ /public/index.php?id=$1    [NC,L] 
 RewriteRule ^review/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]
 RewriteRule ^admin/deleteProduct/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]
-RewriteRule ^admin/addProduct/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]
-RewriteRule ^admin/editProduct/([0-9]+)/?$ /public/index.php?id=$1    [NC,L]
 
 # Rewrite all the default paths to public e.g. /css/style.css -> /public/css/style.css
 RewriteCond %{REQUEST_URI} !/public
