@@ -6,13 +6,22 @@ include_once('defaults/head.php');
 
 <body>
 
+<div class="container">
     <?php
+    include_once('defaults/header.php');
     include_once('defaults/menu.php');
+    include_once('defaults/pictures.php');
     global $products;
     ?>
 
-    <div class="container">
-<br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
+            <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+            <li class="breadcrumb-item"><a href="/products">Products</a></li>
+        </ol>
+    </nav>
+
 <div class="row gy-3 ">
 
     <?php global $products, $name ?>

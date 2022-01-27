@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 27 jan 2022 om 14:05
+-- Gegenereerd op: 20 jan 2022 om 23:44
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kantine`
+-- Database: `healthone`
 --
 
 -- --------------------------------------------------------
@@ -38,10 +38,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
-(1, 'Broodjes', 'categories/broodje.jpg'),
-(2, 'Noodles', 'categories/noodles.jpg'),
-(3, 'Salades', 'categories/salades.jpg'),
-(4, 'Drinken', 'categories/drinken.jpg');
+(1, 'Crosstrainer', 'categories/crosstrainer.jpg'),
+(2, 'Hometrainer', 'categories/hometrainer.jpg'),
+(3, 'Loopband', 'categories/loopband.jpg'),
+(4, 'Roeitrainer', 'categories/roeitrainer.jpg');
 
 -- --------------------------------------------------------
 
@@ -87,18 +87,30 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VALUES
-(1, 'Crosstrainer 1', 'categories/broodjes/broodje1.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(1, 'Crosstrainer 1', 'categories/crosstrainer/cr1.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
 (2, 'Crosstrainer 2', 'categories/crosstrainer/cr2.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
 (3, 'Crosstrainer 3', 'categories/crosstrainer/cr3.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(4, 'Crosstrainer 4', 'categories/crosstrainer/cr4.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(5, 'Crosstrainer 5', 'categories/crosstrainer/cr5.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
+(6, 'Crosstrainer 6', 'categories/crosstrainer/cr6.jpg', 'Train op een van de meest effectieve manieren met deze crosstrainer. Met deze crosstrainer train je je gehele lichaam, van je benen en armen tot je core. En dat op een fijne en soepele manier. Met 32 weerstandsniveaus en 18 verschillende trainingsprogramma\'s zet je iedere keer net dat stapje extra.', 1),
 (13, 'Hometrainer 1', 'categories/hometrainer/ht1.jpg', 'De nieuwe hometrainer is een uitstekende spinningfiets voor de beginnende thuissporter. Deze spinningfiets ziet er strak en stijlvol uit dankzij de zwarte poedercoating van het frame. Dankzij het eigen gewicht van 28 kg is deze spinningfiets te belasten tot een maximaal gebruikersgewicht van 100 kg.', 2),
 (14, 'Hometrainer 2', 'categories/hometrainer/ht2.jpg', 'De nieuwe hometrainer is een uitstekende spinningfiets voor de beginnende thuissporter. Deze spinningfiets ziet er strak en stijlvol uit dankzij de zwarte poedercoating van het frame. Dankzij het eigen gewicht van 28 kg is deze spinningfiets te belasten tot een maximaal gebruikersgewicht van 100 kg.', 2),
 (15, 'Hometrainer 3', 'categories/hometrainer/ht3.jpg', 'De nieuwe hometrainer is een uitstekende spinningfiets voor de beginnende thuissporter. Deze spinningfiets ziet er strak en stijlvol uit dankzij de zwarte poedercoating van het frame. Dankzij het eigen gewicht van 28 kg is deze spinningfiets te belasten tot een maximaal gebruikersgewicht van 100 kg.', 2),
+(16, 'Hometrainer 4', 'categories/hometrainer/ht4.jpg', 'De nieuwe hometrainer is een uitstekende spinningfiets voor de beginnende thuissporter. Deze spinningfiets ziet er strak en stijlvol uit dankzij de zwarte poedercoating van het frame. Dankzij het eigen gewicht van 28 kg is deze spinningfiets te belasten tot een maximaal gebruikersgewicht van 100 kg.', 2),
+(17, 'Hometrainer 5', 'categories/hometrainer/ht5.jpg', 'De nieuwe hometrainer is een uitstekende spinningfiets voor de beginnende thuissporter. Deze spinningfiets ziet er strak en stijlvol uit dankzij de zwarte poedercoating van het frame. Dankzij het eigen gewicht van 28 kg is deze spinningfiets te belasten tot een maximaal gebruikersgewicht van 100 kg.', 2),
+(18, 'Hometrainer 6', 'categories/hometrainer/ht6.jpg', 'De nieuwe hometrainer is een uitstekende spinningfiets voor de beginnende thuissporter. Deze spinningfiets ziet er strak en stijlvol uit dankzij de zwarte poedercoating van het frame. Dankzij het eigen gewicht van 28 kg is deze spinningfiets te belasten tot een maximaal gebruikersgewicht van 100 kg.', 2),
 (19, 'Loopband 1', 'categories/loopband/lb1.jpg', 'Deze loopband is dankzij het brede loopoppervlak, de sterke motor en de vele programma\'s een uitstekende loopband die geschikt is voor een zeer gevarieerde en intensieve thuistraining. Daarnaast heeft deze loopband een loopoppervlak van 141 centimeter lang en 48 centimeter breed. ', 3),
 (20, 'Loopband 2', 'categories/loopband/lb2.png', 'Deze loopband is dankzij het brede loopoppervlak, de sterke motor en de vele programma\'s een uitstekende loopband die geschikt is voor een zeer gevarieerde en intensieve thuistraining. Daarnaast heeft deze loopband een loopoppervlak van 141 centimeter lang en 48 centimeter breed. ', 3),
 (21, 'Loopband 3', 'categories/loopband/lb3.jpg', 'Deze loopband is dankzij het brede loopoppervlak, de sterke motor en de vele programma\'s een uitstekende loopband die geschikt is voor een zeer gevarieerde en intensieve thuistraining. Daarnaast heeft deze loopband een loopoppervlak van 141 centimeter lang en 48 centimeter breed. ', 3),
+(22, 'Loopband 4', 'categories/loopband/lb4.jpg', 'Deze loopband is dankzij het brede loopoppervlak, de sterke motor en de vele programma\'s een uitstekende loopband die geschikt is voor een zeer gevarieerde en intensieve thuistraining. Daarnaast heeft deze loopband een loopoppervlak van 141 centimeter lang en 48 centimeter breed. ', 3),
+(23, 'Loopband 5', 'categories/loopband/lb5.jpg', 'Deze loopband is dankzij het brede loopoppervlak, de sterke motor en de vele programma\'s een uitstekende loopband die geschikt is voor een zeer gevarieerde en intensieve thuistraining. Daarnaast heeft deze loopband een loopoppervlak van 141 centimeter lang en 48 centimeter breed. ', 3),
+(24, 'Loopband 6', 'categories/loopband/lb6.png', 'Deze loopband is dankzij het brede loopoppervlak, de sterke motor en de vele programma\'s een uitstekende loopband die geschikt is voor een zeer gevarieerde en intensieve thuistraining. Daarnaast heeft deze loopband een loopoppervlak van 141 centimeter lang en 48 centimeter breed. ', 3),
 (25, 'Roeitrainer 1', 'categories/roeitrainer/rt1.jpg', 'Deze roeitrainer van  is voorzien van een stijlvol design en sterk frame dat voldoende uitdaging biedt voor het gehele gezin. Door de V-belt aandrijving is de Row 2 tijdens gebruik fluisterstil en na training kan hij eenvoudig worden opgeklapt en worden weggerold. De fitnessapparaten van Focus Fitnes staan bekend om de goede prijs/kwaliteit verhoudingen en deze Row 2 is hier een perfect voorbeeld van. Kortom, deze roeitrainer is een perfect apparaat voor de thuissporter!\r\n\r\n', 4),
 (26, 'Roeitrainer 2', 'categories/roeitrainer/rt2.jpg', 'Deze roeitrainer van  is voorzien van een stijlvol design en sterk frame dat voldoende uitdaging biedt voor het gehele gezin. Door de V-belt aandrijving is de Row 2 tijdens gebruik fluisterstil en na training kan hij eenvoudig worden opgeklapt en worden weggerold. De fitnessapparaten van Focus Fitnes staan bekend om de goede prijs/kwaliteit verhoudingen en deze Row 2 is hier een perfect voorbeeld van. Kortom, deze roeitrainer is een perfect apparaat voor de thuissporter!\r\n\r\n', 4),
-(27, 'Roeitrainer 3', 'categories/roeitrainer/rt3.jpg', 'Deze roeitrainer van  is voorzien van een stijlvol design en sterk frame dat voldoende uitdaging biedt voor het gehele gezin. Door de V-belt aandrijving is de Row 2 tijdens gebruik fluisterstil en na training kan hij eenvoudig worden opgeklapt en worden weggerold. De fitnessapparaten van Focus Fitnes staan bekend om de goede prijs/kwaliteit verhoudingen en deze Row 2 is hier een perfect voorbeeld van. Kortom, deze roeitrainer is een perfect apparaat voor de thuissporter!\r\n\r\n', 4);
+(27, 'Roeitrainer 3', 'categories/roeitrainer/rt3.jpg', 'Deze roeitrainer van  is voorzien van een stijlvol design en sterk frame dat voldoende uitdaging biedt voor het gehele gezin. Door de V-belt aandrijving is de Row 2 tijdens gebruik fluisterstil en na training kan hij eenvoudig worden opgeklapt en worden weggerold. De fitnessapparaten van Focus Fitnes staan bekend om de goede prijs/kwaliteit verhoudingen en deze Row 2 is hier een perfect voorbeeld van. Kortom, deze roeitrainer is een perfect apparaat voor de thuissporter!\r\n\r\n', 4),
+(28, 'Roeitrainer 4', 'categories/roeitrainer/rt4.jpg', 'Deze roeitrainer van  is voorzien van een stijlvol design en sterk frame dat voldoende uitdaging biedt voor het gehele gezin. Door de V-belt aandrijving is de Row 2 tijdens gebruik fluisterstil en na training kan hij eenvoudig worden opgeklapt en worden weggerold. De fitnessapparaten van Focus Fitnes staan bekend om de goede prijs/kwaliteit verhoudingen en deze Row 2 is hier een perfect voorbeeld van. Kortom, deze roeitrainer is een perfect apparaat voor de thuissporter!\r\n\r\n', 4),
+(29, 'Roeitrainer 5', 'categories/roeitrainer/rt5.jpg', 'Deze roeitrainer van  is voorzien van een stijlvol design en sterk frame dat voldoende uitdaging biedt voor het gehele gezin. Door de V-belt aandrijving is de Row 2 tijdens gebruik fluisterstil en na training kan hij eenvoudig worden opgeklapt en worden weggerold. De fitnessapparaten van Focus Fitnes staan bekend om de goede prijs/kwaliteit verhoudingen en deze Row 2 is hier een perfect voorbeeld van. Kortom, deze roeitrainer is een perfect apparaat voor de thuissporter!\r\n\r\n', 4),
+(30, 'Roeitrainer 6', 'categories/roeitrainer/rt6.jpg', 'Deze roeitrainer van  is voorzien van een stijlvol design en sterk frame dat voldoende uitdaging biedt voor het gehele gezin. Door de V-belt aandrijving is de Row 2 tijdens gebruik fluisterstil en na training kan hij eenvoudig worden opgeklapt en worden weggerold. De fitnessapparaten van Focus Fitnes staan bekend om de goede prijs/kwaliteit verhoudingen en deze Row 2 is hier een perfect voorbeeld van. Kortom, deze roeitrainer is een perfect apparaat voor de thuissporter!\r\n\r\n', 4);
 
 -- --------------------------------------------------------
 
@@ -111,7 +123,9 @@ CREATE TABLE `review` (
   `user_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `suggestion` text NOT NULL
+  `description` text NOT NULL,
+  `stars` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -166,6 +180,8 @@ ALTER TABLE `product`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `stars` (`stars`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -200,7 +216,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT voor een tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
@@ -222,6 +238,7 @@ ALTER TABLE `product`
 -- Beperkingen voor tabel `review`
 --
 ALTER TABLE `review`
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 

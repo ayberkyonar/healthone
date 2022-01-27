@@ -1,13 +1,17 @@
-html, body {
-    font-family: Ebrima;
-    padding: 10px;
-}
 body {
-    background-color: #e1e0e0
+    background-color: rgb(84, 88, 91)
+}
+
+* {
+    font-family: Ebrima;
 }
 
 #one{
     color: rgb(130, 140, 145)
+}
+
+.container {
+    background-color: white;
 }
 
 .pull-right img-thumbnail {

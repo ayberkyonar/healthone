@@ -4,6 +4,9 @@ require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
 require '../Modules/Login.php';
+require '../Modules/Contact.php';
+//require '../Modules/Logout.php';
+//require '../Modules/Common.php';
 session_start();
 
 $request = $_SERVER['REQUEST_URI'];
@@ -15,7 +18,7 @@ switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
         $categories = getCategories();
-
+        
         include_once "../Templates/categories.php";
         break;
 
@@ -28,7 +31,7 @@ switch ($params[1]) {
             include_once "../Templates/products.php";
         } else {
             $titleSuffix = ' | Home';
-            include_once "../Templates/categories.php";
+            include_once "../Templates/home.php";
         }
         break;
 
@@ -47,15 +50,25 @@ switch ($params[1]) {
         }
         break;
 
-    case 'suggestion':
+    case 'contact':
+        $contact = getContact();
+        include_once "../Templates/contact.php";
+        break;
+
+    case 'review':
         if(isset($_GET['id'])) {
+            $productId=$_GET['id'];
+            $product = getProduct($productId);
             if(isset($_POST['verzenden'])) {
                 //var_dump($_POST);
                 $name = $_POST['name'];
-                $suggestion = $_POST['suggestion'];
-                saveReview($name,$suggestion);
+                $description = $_POST['description'];
+                $stars = $_POST['stars'];
+                saveReview($name,$description,$stars,$productId);
+                $reviews=getReviews($productId);
+                include_once "../Templates/product.php";
             } else {
-                include_once "../Templates/suggestion.php";
+                include_once "../Templates/review.php";
             }
         } else {
             include_once "../Templates/home.php";
@@ -68,7 +81,8 @@ switch ($params[1]) {
             $result = checkLogin();
             switch ($result) {
                 case 'ADMIN':
-                    header("Location: /admin/products");
+                    header("Location: /admin/home");
+                    //include_once "../Templates/admin/home.php"
                     break;
 
                 case 'MEMBER':

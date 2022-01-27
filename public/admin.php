@@ -8,7 +8,7 @@ if (!isAdmin()) {
     switch ($params[2]) {
 
         case 'home':
-            include_once "../Templates/admin/products.php";
+            include_once "../Templates/admin/home.php";
             break;
 
         case 'products':
@@ -28,9 +28,12 @@ if (!isAdmin()) {
             break;
 
         case 'editProduct':
+            include_once "../Templates/admin/editProduct.php";
+            break;
+
 
         default:
-            include_once "../Templates/admin/products.php";
+            include_once "../Templates/admin/home.php";
             break;
     }
 

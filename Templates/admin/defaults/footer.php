@@ -1,3 +1,3 @@
 <footer >
-    <p class="clearfix pb-3  text-black text-center">&copy;Kantine</p>
+    <p class="clearfix pb-3  text-black text-center">&copy;Ayberk Yonar, HealthOne</p>
 </footer>

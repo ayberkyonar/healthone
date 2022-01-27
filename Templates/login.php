@@ -6,10 +6,20 @@ include_once('defaults/head.php');
 
 <body>
 
+<div class="container">
     <?php
+    include_once('defaults/header.php');
     include_once('defaults/menu.php');
+    include_once('defaults/pictures.php');
     ?>
-    <div class="container">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
+            <li class="breadcrumb-item"><a href="/login">Login</a></li>
+        </ol>
+    </nav>
+
         <div class="row gy-3">
             <form method="POST">
                 <div class="mb-3">
