@@ -3,6 +3,7 @@ require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
+require '../Modules/Register.php';
 require '../Modules/Login.php';
 require '../Modules/Contact.php';
 //require '../Modules/Logout.php';
@@ -75,6 +76,30 @@ switch ($params[1]) {
         }
         break;
 
+    case 'register':
+        $titleSuffix = ' | Register';
+
+        if(isset($_POST['submit'])){
+            $result = makeRegistration();
+            switch ($result) {
+                case 'SUCCESS':
+                    header("Location: /home");
+                    break;
+
+                case 'INCOMPLETE':
+                    $message="Niet alle velden zijn correct ingevuld";
+                    include_once "../Templates/register.php";
+                    break;
+
+                case 'EXIST':
+                    $message = "Gebruiker bestaat al";
+                    include_once "../Templates/register.php";
+            }
+        } else {
+            include_once "../Templates/register.php";
+        }
+        break;
+
     case 'login':
         $titleSuffix = ' | Login';
         if (isset($_POST['login'])) {
@@ -86,6 +111,7 @@ switch ($params[1]) {
                     break;
 
                 case 'MEMBER':
+                    header("Location: /member/home");
                     break;
 
                 case 'FAILURE':
@@ -106,6 +132,10 @@ switch ($params[1]) {
 
     case 'admin':
         include_once ('admin.php');
+        break;
+
+    case 'member':
+        include_once ('member.php');
         break;
 
     case 'logout':

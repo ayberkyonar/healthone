@@ -10,15 +10,17 @@
             include_once ('defaults/header.php');
             include_once ('defaults/menu.php');
             include_once ('defaults/pictures.php');
-            include_once ('../Modules/User.php');
-            setUser();
+            include_once ('../Modules/Register.php');
             ?>
 
-            <h1>Hallo</h1>
             <form method="POST" action="/register">
                 <div class="mb-3">
-                    <label for="name" class="form-label">Naam</label>
-                    <input type="text" class="form-control" id="name" name="name">
+                    <label for="name" class="form-label">Voornaam</label>
+                    <input type="text" class="form-control" id="first_name" name="firstName">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Achternaam</label>
+                    <input type="text" class="form-control" id="last_name" name="lastName">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>

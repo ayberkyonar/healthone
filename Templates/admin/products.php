@@ -24,9 +24,9 @@ global $product;
 <body>
 <div class="container">
     <?php
-    include_once ('defaults/header.php');
-    include_once ('defaults/menu.php');
-    include_once ('defaults/pictures.php');
+    include_once('defaults/header.php');
+    include_once('defaults/menu.php');
+    include_once('defaults/pictures.php');
     ?>
 
     <div class="container">
@@ -73,7 +73,7 @@ global $product;
     <hr>
 
     <?php
-    include_once ('defaults/footer.php');
+    include_once('defaults/footer.php');
     ?>
 
     <script src="index.js"></script>
