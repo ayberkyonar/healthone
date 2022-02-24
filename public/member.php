@@ -13,6 +13,8 @@ if (!isMember()) {
         case 'products':
         case 'profile':
             include_once "../Templates/member/profile.php";
+            break;
+
         case 'editprofile':
             $titleSuffix = ' | Profile';
 

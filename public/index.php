@@ -6,6 +6,7 @@ require '../Modules/Reviews.php';
 require '../Modules/Register.php';
 require '../Modules/Login.php';
 require '../Modules/Contact.php';
+require '../Modules/Member.php';
 //require '../Modules/Logout.php';
 //require '../Modules/Common.php';
 session_start();
