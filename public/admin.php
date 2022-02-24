@@ -7,10 +7,6 @@ if (!isAdmin()) {
     } else {
     switch ($params[2]) {
 
-        case 'home':
-            include_once "../Templates/admin/home.php";
-            break;
-
         case 'products':
             $products = getAllProducts();
             include_once "../Templates/admin/products.php";
