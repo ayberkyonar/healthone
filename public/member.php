@@ -35,20 +35,3 @@ if (!isMember()) {
         case 'changepassword':
     }
 }
-
-function isMember():bool
-{
-    if (isset($_SESSION['user'])&&!empty($_SESSION['user']))
-    {
-      $user=$_SESSION['user'];
-      if ($user->role === "member")
-      {
-          return true;
-      }
-      else
-      {
-          return false;
-      }
-    }
-    return false;
-}
