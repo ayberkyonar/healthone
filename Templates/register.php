@@ -13,8 +13,15 @@
             include_once ('../Modules/Register.php');
             ?>
 
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/register">Register</a></li>
+                </ol>
+            </nav>
+
             <?php if (!empty($message)): ?>
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-secondary" role="alert">
                     <?=$message?>
                 </div>
             <?php endif;?>
@@ -29,15 +36,19 @@
                     <input type="text" class="form-control" id="last_name" name="lastName">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
+                    <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">Wachtwoord</label>
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" name="submit">Register</button>
+                </div>
             </form>
+
+            <hr>
 
             <?php
             include_once ('defaults/footer.php');

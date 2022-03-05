@@ -2,7 +2,6 @@
 global $params;
 
 if (!isMember()) {
-    logout();
     header("Location:/home");
 } else {
     switch ($params[2]) {

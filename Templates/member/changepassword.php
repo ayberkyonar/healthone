@@ -22,11 +22,11 @@ include_once('defaults/head.php');
         </div>
         <div class="col-md-12">
             <label for="inputFirstName" class="form-label">Wachtwoord</label>
-            <input type="text" name="password" class="form-control" id="inputPassword" value="<?php if (isset($_SESSION['user']->password)) {echo $_SESSION['user']->password;} else {echo "";} ?>">
+            <input type="password" name="password" class="form-control" id="inputPassword" value="<?php if (isset($_SESSION['user']->password)) {echo $_SESSION['user']->password;} else {echo "";} ?>">
         </div>
 
-        <div class="col-md-12">
-            <button type="submit" name="profile" class="btn btn-primary">Aanpassen</button>
+        <div class="modal-footer">
+            <button type="submit" name="profile" class="btn btn-primary">Edit</button>
         </div>
     </form>
 

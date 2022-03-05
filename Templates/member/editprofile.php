@@ -32,8 +32,8 @@ include_once('defaults/head.php');
             <input type="text" name="lastName" class="form-control" id="inputLastName" value="<?php if (isset($_SESSION['user']->last_name)) {echo $_SESSION['user']->last_name;} else {echo "";} ?>">
         </div>
 
-        <div class="col-md-12">
-            <button type="submit" name="profile" class="btn btn-primary">Aanpassen</button>
+        <div class="modal-footer">
+            <button type="submit" name="profile" class="btn btn-primary">Edit</button>
         </div>
     </form>
 

@@ -3,7 +3,7 @@ function getReviews(int $id):array
 {
     GLOBAL $pdo;
 
-    $sth=$pdo->prepare('SELECT * FROM review where product_id=? order by date DESC');
+    $sth=$pdo->prepare('SELECT * FROM review WHERE product_id=? order by date DESC');
     $sth->bindParam(1,$id);
     $sth->execute();
     return $sth->fetchAll(PDO::FETCH_CLASS, 'Review');

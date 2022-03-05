@@ -12,14 +12,10 @@ include_once ('defaults/pictures.php');
 ?>
 </div>
 
+
 <div class="container">
-<table class="table align-middle">
-    <thead>
-    <tr>
-        <th scope="col"></th>
-        <th scope="col"></th>
-    </tr>
-    </thead>
+<table class="table align-middle table-hover">
+    <br>
     <tbody>
     <tr>
         <td>Email</td>
@@ -35,8 +31,9 @@ include_once ('defaults/pictures.php');
     </tr>
     </tbody>
 </table>
-<a type="button" class="btn-success btn-sm px-3" href="/member/editprofile">Profiel aanpassen</a>
-<a type="button" class="btn-danger btn-sm px-3" href="/member/changepassword">Wachtwoord aanpassen</a>
+
+    <a type="button" class="btn btn-primary" href="/member/editprofile">Edit Profile</a>
+    <a type="button" class="btn btn-secondary" href="/member/changepassword">Edit Password</a>
 
 <hr>
 <?php include_once ('defaults/footer.php');

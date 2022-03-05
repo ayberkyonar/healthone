@@ -20,7 +20,7 @@ switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
         $categories = getCategories();
-        
+
         include_once "../Templates/categories.php";
         break;
 
@@ -63,7 +63,7 @@ switch ($params[1]) {
             $product = getProduct($productId);
             if(isset($_POST['verzenden'])) {
                 //var_dump($_POST);
-                $name = $_POST['name'];
+                $name = $_SESSION['user']->first_name . " " . $_SESSION['user']->last_name;
                 $description = $_POST['description'];
                 $stars = $_POST['stars'];
                 saveReview($name,$description,$stars,$productId);
@@ -88,12 +88,12 @@ switch ($params[1]) {
                     break;
 
                 case 'INCOMPLETE':
-                    $message="Niet alle velden zijn correct ingevuld";
+                    $message="Niet alle velden zijn correct ingevuld!";
                     include_once "../Templates/register.php";
                     break;
 
                 case 'EXIST':
-                    $message = "Gebruiker bestaat al";
+                    $message = "Gebruiker bestaat al!";
                     include_once "../Templates/register.php";
             }
         } else {
@@ -116,12 +116,12 @@ switch ($params[1]) {
                     break;
 
                 case 'FAILURE':
-                    $message = "Email of password niet correct ingevuld!";
+                    $message = "Email of wachtwoord niet correct ingevuld!";
                     include_once "../Templates/login.php";
                     break;
 
                 case 'INCOMPLETE':
-                    $message = "Formulier niet volledig ingevuld!";
+                    $message = "Niet alle velden zijn correct ingevuld!";
                     include_once "../Templates/login.php";
                     break;
             }

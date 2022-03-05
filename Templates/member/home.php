@@ -13,7 +13,10 @@ include_once('defaults/head.php');
     ?>
 
     <h4>Sportcenter HealthOne</h4>
-    MEMBER PAGE
+    <?php
+    echo "Welkom " . $_SESSION['user']->first_name . " " . $_SESSION['user']->last_name;
+    ?>
+    <br>
     Fit en gezond zijn is geen vanzelfsprekendheid. We moeten er zelf wat voor doen. Goede, gezonde voeding is hiervoor de basis.
     Bewegen hoort hier ook bij. Regelmatig bewegen zorgt voor een goede doorbloeding en draagt bij aan ontspanning van lichaam en geest.
     Sporten is goed voor sterkere spieren en voor de conditie. Sporcenter HealthOne heeft verschillende sportapparaten om mee te kunnen werken aan je conditie.

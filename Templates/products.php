@@ -20,14 +20,24 @@ include_once('defaults/head.php');
     include_once('defaults/pictures.php');
 
 
-    global $products;
+    global $products, $product, $categoryId;
     ?>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
+            <?php
+            if (isMember()){ ?>
+                <li class="breadcrumb-item"><a href="/member/home">Home</a></li>
+                <?php
+            }else { ?>
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <?php
+            }
+            ?>
+
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/products">Products</a></li>
+            <li class="breadcrumb-item"><a href="/category/<?= $categoryId ?>">Products</a></li>
+
         </ol>
     </nav>
 

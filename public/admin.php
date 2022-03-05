@@ -24,9 +24,6 @@ if (!isAdmin()) {
             break;
 
         case 'editProduct':
-            include_once "../Templates/admin/editProduct.php";
-            break;
-
 
         default:
             include_once "../Templates/admin/home.php";

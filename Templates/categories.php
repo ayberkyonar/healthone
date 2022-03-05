@@ -22,8 +22,18 @@ include_once('defaults/head.php');
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home">Sportcenter</a></li>
+            <?php
+            if (isMember()){ ?>
+                <li class="breadcrumb-item"><a href="/member/home">Home</a></li>
+                <?php
+            }else { ?>
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <?php
+            }
+            ?>
+
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+
         </ol>
     </nav>
 

@@ -14,7 +14,7 @@
                     <a class="nav-link active" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">Sportapparaat</a>
+                    <a class="nav-link" href="/categories">Sportapparaten</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
