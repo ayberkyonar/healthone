@@ -13,6 +13,12 @@
             include_once ('../Modules/Register.php');
             ?>
 
+            <?php if (!empty($message)): ?>
+                <div class="alert alert-success" role="alert">
+                    <?=$message?>
+                </div>
+            <?php endif;?>
+
             <form method="POST" action="/register">
                 <div class="mb-3">
                     <label for="name" class="form-label">Voornaam</label>

@@ -9,8 +9,15 @@ include_once('defaults/head.php');
 <div class="container">
     <?php
     include_once('defaults/header.php');
-    include_once('defaults/menu.php');
+
+    if (isMember()) {
+        include_once('member/defaults/menu.php');
+    } else {
+        include_once('defaults/menu.php');
+    }
+
     include_once('defaults/pictures.php');
+
     global $product, $name, $reviews;
     ?>
 
@@ -31,7 +38,11 @@ include_once('defaults/head.php');
             <h5 class="card-title"><?= $product->name ?></h5>
             <img class="img-fluid center-block" width="300px" src='/img/<?= $product->picture ?>'/>
             <p class="card-text" style="justify-content: center"><?= $product->description ?></p>
-            <a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-secondary">Add Review</a>
+
+            <?php
+            if (isMember()) {
+                ?><a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-secondary">Add Review</a><?php
+            }?>
         </div>
     </div>
 

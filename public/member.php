@@ -33,5 +33,22 @@ if (!isMember()) {
             }
             break;
         case 'changepassword':
+            $titleSuffix = ' | Profile';
+
+            if (isset($_POST['profile'])) {
+                $result = changePassword();
+                if ($result===true) {
+                    header("Location: /member/profile");
+                } else {
+                    $message="Niet alle velden zijn correct ingevuld";
+                    include_once "../Templates/member/changepassword.php";
+                }
+                break;
+            }
+            else {
+                include_once "../Templates/member/changepassword.php";
+            }
+            break;
+
     }
 }

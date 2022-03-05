@@ -13,6 +13,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/products">Beheer</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
