@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 05 mrt 2022 om 22:26
+-- Gegenereerd op: 06 mrt 2022 om 18:26
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -128,14 +128,6 @@ CREATE TABLE `review` (
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `review`
---
-
-INSERT INTO `review` (`id`, `user_id`, `name`, `date`, `description`, `stars`, `product_id`) VALUES
-(22, 1, 'member member', '2022-03-05', 'ew', 1, 1),
-(23, 1, 'member member', '2022-03-05', 'yo', 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -156,8 +148,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `role`) VALUES
-(1, 'test@hotmail.com', 'test', 'test', 'test', 'admin'),
-(2, 'member@hotmail.com', '1', 'member', 'member', 'member');
+(1, 'admin@hotmail.com', 'admin', 'admin', 'admin', 'admin');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -197,7 +188,8 @@ ALTER TABLE `review`
 -- Indexen voor tabel `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
@@ -219,19 +211,19 @@ ALTER TABLE `opening_hours`
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT voor een tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
